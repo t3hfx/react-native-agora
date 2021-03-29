@@ -40,7 +40,7 @@ class RCTAgoraRtcEngineModule: RCTEventEmitter {
     }
 
     override var methodQueue: DispatchQueue! {
-        return DispatchQueue.main
+        return DispatchQueue(label: "AgoraThread",qos: .userInteractive)
     }
 
     override func supportedEvents() -> [String]! {
